@@ -7,11 +7,6 @@ img: handler.jpg # Add image post (optional)
 tags: [Android, Java]
 ---
 
-
-# Handle简述
-
-## 为什么要使用Handler？
-
 我们都知道UI主线程中不能随意在启动一个进程进行改变UI，Google这样做的原因是为了保证UI主线程的安全性。  
 
 那么如果我们想在子线程中改变UI，我们就需要用到Handler。如进行在下载图片，下载音乐等大文件耗时长的业务，必须使用多线程，让耗时操作在子线程中进行。这是我们就要使用Handler，使用Handler同时要使用Message。
@@ -54,8 +49,9 @@ Looper循环MessageQueue将Message取出，交由Handler进行处理，处理方
     }
  ```
     
-- 自定义线程的处理逻辑  
-每隔半秒种改变一次TextView中的内容，改变101次
+- 自定义线程的处理逻辑
+
+	每隔半秒种改变一次TextView中的内容，改变101次
 	
 	```java
 	class MyThread implements Runnable{
