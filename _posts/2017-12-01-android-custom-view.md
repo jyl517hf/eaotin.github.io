@@ -10,13 +10,13 @@ tags: [Android, View, Java]
 
 对自定义View一直很模糊，刚好最近不太忙，系统性的总结一下，自定义View主要有以下几个知识点：
 
-- Canvas：可以它为一个画布，用于承载View中的所有元素（基础）
-- Paint：作为画笔的存在，用来加特效的（基础）
-- 裁切和几何变换：通过限定在某些区域绘制以及对view进行变换达到指定效果（进阶）
+- Canvas：可以它为一个画布，用于承载View中的所有元素（基础）；
+- Paint：作为画笔的存在，用来加特效的（基础）；
+- 裁切和几何变换：通过限定在某些区域绘制以及对view进行变换达到指定效果（进阶）；
 
 ## Canvas
 
-- 可以通过drawXxx()方法画出下列简单图形：
+可以通过drawXxx()方法画出下列简单图形
 
 - drawCircle():圆
 - drawPoint():点
@@ -26,7 +26,6 @@ tags: [Android, View, Java]
 - drawArc():弧
 - drawOwal():椭圆
 - drawRoundRect():圆角矩形
-
 - 通过drawPath()画出复杂的图形
 - 通过drawBitmap()画图片
 - 通过drawText()画图片
