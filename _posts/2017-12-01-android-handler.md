@@ -5,7 +5,10 @@ date: 2017-11-01 20:32:20 +0800
 description: You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. # Add post description (optional)
 img: handler.jpg # Add image post (optional)
 tags: [Android, Java]
+
 ---
+
+# Handler简单释义
 
 我们都知道UI主线程中不能随意在启动一个进程进行改变UI，Google这样做的原因是为了保证UI主线程的安全性。  
 那么如果我们想在子线程中改变UI，我们就需要用到Handler。如进行在下载图片、下载音乐等大文件耗时长的业务，必须使用多线程，让耗时操作在子线程中进行。这时我们就要使用Handler，使用Handler同时要使用Message。

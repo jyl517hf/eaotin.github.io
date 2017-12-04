@@ -7,6 +7,7 @@ img: custom-view.jpg # Add image post (optional)
 tags: [Android, View, Java]
 ---
 
+# 自定义View
 
 对自定义View一直很模糊，刚好最近不太忙，系统性的总结一下，自定义View主要有以下几个知识点：
 
