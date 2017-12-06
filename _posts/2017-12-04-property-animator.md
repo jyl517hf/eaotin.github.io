@@ -92,9 +92,8 @@ tags: [Android, View, Animator]
 	PropertyValuesHolder holder1 = PropertyValuesHolder.ofFloat("scaleX", 1);  
 	PropertyValuesHolder holder2 = PropertyValuesHolder.ofFloat("scaleY", 1);  
 	PropertyValuesHolder holder3 = PropertyValuesHolder.ofFloat("alpha", 1);
-	ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(view, 	holder1, holder2, holder3)  
+	ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(view,holder1, holder2, holder3)  
 	animator.start();
-	
 	```	
 	
 	PropertyValuesHolder还有ofKeyFrame()将一个动画的关键帧进行拆分，来将动画的一个属性分成多个阶段。		
