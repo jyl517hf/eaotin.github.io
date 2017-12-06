@@ -24,7 +24,7 @@ tags: [Android, View, Animator]
   
 	具体API如下：
 
-	![animation api](../assets/img/animator-api.jpg){:height="75%" width="75%"}
+	![animation api](../assets/img/animator-api.jpg)
 
 	可以看出View中的每个属性都有一个setter，而对应的ViewPropertyAnimator中也有相应的方法，可以理解为一一对应的关系。其中XXXBy()方法是将属性增加到一个值，如tanslationXBy(100)，是将X的位置**增加**100，而tanslationX()是将X的位置**增加到**100。
 	
