@@ -52,6 +52,16 @@ tags: [Android, View, Animator]
 
 	3. 调用start()方法启动动画。
 
+- ofInt()
+
+- ofFloat()
+
+- ofObject():需要借助自定义的Evaluator来对一个对象做动画，使用方式为：
+
+	> 1.为目标属性写一个自定义的 TypeEvaluator  
+	> 2.使用 ofObject() 来创建 Animator，并把自定义的 TypeEvaluator 作为参数填入	
+
+
 - 设置监听器，监听动画状态
 	
 	- 添加动画监听器 
@@ -64,6 +74,30 @@ tags: [Android, View, Animator]
 		> ObjectAnimator.addListener(null)  
 		> ObjectAnimator.addUpdateListener(null)
 		> ObjectAnimator.addPauseListener(null)
+		
+- TypeEvaluator 
+
+	适合插值器Interpolator对应的估值器，Interpolator是有时间完成度转换为动画完成度的，而TypeEvaluator是由动画完成度来实际的属性的值。
+
+	TypeEvaluator 的常用用法是使用 ArgbEvaluator 来做颜色渐变的动画。
+
+	也可以自定义Evaluator来自定义动画，通过重写Evaluator中的evaluate()方法来实现的。
+	
+- PropertyValuesHolder
+
+	主要用于实现和View.animator().scaleX(1).scaleY(1).alpha(1)这样的动画，为自定义的View同时执行多个动画.使用方法如下
+	
+	```java
+	
+	PropertyValuesHolder holder1 = PropertyValuesHolder.ofFloat("scaleX", 1);  
+	PropertyValuesHolder holder2 = PropertyValuesHolder.ofFloat("scaleY", 1);  
+	PropertyValuesHolder holder3 = PropertyValuesHolder.ofFloat("alpha", 1);
+	ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(view, 	holder1, holder2, holder3)  
+	animator.start();
+	
+	```	
+	
+	PropertyValuesHolder还有ofKeyFrame()将一个动画的关键帧进行拆分，来将动画的一个属性分成多个阶段。		
 
 ## 通用功能
 
@@ -87,6 +121,12 @@ tags: [Android, View, Animator]
 	|	LinearOutSlowInInterpolator 	|	持续减速。它和 DecelerateInterpolator 比起来，同为减速曲线，主要区别在于 LinearOutSlowInInterpolator 的初始速度更高。对于人眼的实际感觉，区别其实也不大，不过还是能看出来一些的。 |   
 	|	FastOutSlowInInterpolator	|	先加速再减速。同样也是先加速再减速的还有前面说过的 AccelerateDecelerateInterpolator，不过它们的效果是明显不一样的。FastOutSlowInInterpolator 用的是贝塞尔曲线，AccelerateDecelerateInterpolator 用的是正弦 / 余弦曲线。具体来讲， FastOutSlowInInterpolator 的前期加速度要快得多 |  
 
+## AnimatorSet 
 
+用于控制一个动画集合的执行，比如先执行一个动画，然后执行另一个动画等。它的主要API有：
 
-
+- play()
+- playTogether()
+- with()
+- before()
+- after()
